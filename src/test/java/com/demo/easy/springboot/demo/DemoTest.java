@@ -3,6 +3,7 @@ package com.demo.easy.springboot.demo;
 import com.demo.easy.springboot.controller.Demo;
 import com.demo.easy.springboot.pojo.ConfigPrefixIsTest;
 import com.demo.easy.springboot.pojo.ConfigProperties;
+import lombok.AllArgsConstructor;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,13 +26,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@AllArgsConstructor
 public class DemoTest {
 
     private MockMvc mvc;
 
-    private ConfigPrefixIsTest configPrefixIsTest;
+    private final ConfigPrefixIsTest configPrefixIsTest;
 
-    private ConfigProperties configProperties;
+    private final ConfigProperties configProperties;
 
     @Before
     public void setUp() throws Exception {
